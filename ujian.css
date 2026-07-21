@@ -1,6 +1,4 @@
-/* ==========================================
-   1. RESET & BASE STYLES
-   ========================================== */
+/* RESET & BASE STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -19,9 +17,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ==========================================
-   2. LAYOUT CONTAINER (RESPONSIF)
-   ========================================== */
+/*LAYOUT CONTAINER (RESPONSIF)*/
 .container {
     background-color: #fff;
     width: 100%;
@@ -30,6 +26,8 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     min-height: 100vh;
     transition: background-color 0.3s ease;
+   border-radius: 16px;
+   overflow: hidden;
 }
 
 /* Sidebar Styling */
