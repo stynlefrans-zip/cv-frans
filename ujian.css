@@ -1,0 +1,291 @@
+/* ==========================================
+   1. RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================
+   2. LAYOUT CONTAINER (RESPONSIF)
+   ========================================== */
+.container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1100px; /* Fleksibel untuk Laptop/Desktop */
+    display: flex;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #d8e4e9;
+    width: 35%;
+    padding: 40px 30px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-img-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+    transition: border-color 0.3s ease;
+}
+
+h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #7f8c8d;
+    margin-bottom: 20px;
+    width: 50px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.contact-section a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Main Content Styling */
+.main-content {
+    width: 65%;
+    padding: 60px 40px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.job-title {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #7f8c8d;
+    min-height: 1.2em; /* Mencegah layout bergeser saat efek ketik berjalan */
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1a3c5a;
+    margin-bottom: 20px;
+}
+
+.summary {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #4a4645;
+    text-align: justify;
+    font-style: normal;
+}
+
+.experience, .education {
+    margin-top: 30px;
+}
+
+.exp-item, .edu-item {
+    margin-top: 15px;
+}
+
+h4 {
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.company, .year {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin: 2px 0;
+}
+
+.main-content ul {
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.main-content ul li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.edu-item p {
+    font-style: normal;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   3. ELEMEN INTERAKTIF (BUTTONS & TOAST)
+   ========================================== */
+.floating-btn {
+    position: fixed;
+    right: 20px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, background 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-btn {
+    top: 20px;
+    background-color: #1a3c5a;
+    color: #fff;
+}
+
+.print-btn {
+    top: 68px;
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.fullscreen-btn {
+    top: 116px;
+    background-color: #8e44ad;
+    color: #fff;
+}
+
+.floating-btn:hover {
+    transform: translateY(-2px);
+}
+
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================
+   4. TEMA GELAP (DARK MODE)
+   ========================================== */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-theme .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+body.dark-theme .sidebar {
+    background-color: #252d3a;
+}
+
+body.dark-theme .profile-img {
+    border-color: #90caf9; /* Ubah warna bingkai foto saat mode malam */
+}
+
+body.dark-theme h1 {
+    color: #64b5f6;
+}
+
+body.dark-theme h3, 
+body.dark-theme h4 {
+    color: #90caf9;
+}
+
+body.dark-theme .summary, 
+body.dark-theme .sidebar ul li,
+body.dark-theme .main-content ul li {
+    color: #cccccc;
+}
+
+body.dark-theme .job-title, 
+body.dark-theme .company, 
+body.dark-theme .year {
+    color: #b0bec5;
+}
+
+/* ==========================================
+   5. MEDIA QUERIES (MOBILE & PRINT)
+   ========================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .sidebar, .main-content {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .floating-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        right: 10px;
+    }
+
+    .theme-btn { top: 10px; }
+    .print-btn { top: 52px; }
+    .fullscreen-btn { top: 94px; }
+}
+
+@media print {
+    .floating-btn, .toast-notification {
+        display: none !important;
+    }
+}
