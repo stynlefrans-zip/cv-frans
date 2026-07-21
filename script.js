@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. EFEK KETIK PADA JOB TITLE
     const jobTitleElement = document.querySelector('.job-title');
-    const titles = ["Programmer", "Front-end Developer"];
+    const titles = ["Programmer", "Junior Front-end Developer", "Bisa main music"];
     let titleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
